@@ -12,12 +12,13 @@ while True:
         maior = num
     if num < menor:
         menor = num
-    escolha = str(input('Deseja continuar a digitar [S/N]: ').upper())
+    escolha = str(input('Deseja continuar a digitar [S/N]: ').upper().strip())
     if escolha == 'S':
         cont += 1
         continue
     else:
         break
 
+print('\nVocê digitou {} números.'.format(cont))
 print('A média de todos os números digitados é: {}'.format(soma / cont))
-print('O mairo número é {} e o menor número é {}.'.format(maior, menor))
+print('O maior número é {} e o menor número é {}.'.format(maior, menor))

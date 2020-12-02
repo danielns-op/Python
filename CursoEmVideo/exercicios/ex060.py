@@ -1,3 +1,6 @@
+from time import sleep
+print('*- Calculando Fatorial -*')
+sleep(1)
 num = int(input('Informe um número: '))
 print('Opção com while:')
 valor = num
