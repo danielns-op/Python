@@ -1,3 +1,4 @@
 # Python
-# Exercicios referente ao curso de python
-# do Curso em Video.
+# Markdown
+Diretório destinado ao meus estudos da linguagem Python.
+
