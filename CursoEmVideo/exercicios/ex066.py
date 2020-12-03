@@ -6,4 +6,4 @@ while True:
         break
     cont += 1
     soma += num
-print(f'Você digitou {cont} números e a soma desses números é {soma}.')
+print(f'Você digital {cont} números e a soma desses números é {soma}.')
