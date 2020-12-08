@@ -1,0 +1,12 @@
+matriz = [[], [], []]
+
+for pos in range(0, len(matriz)):
+    for valor in range(0, len(matriz)):
+        matriz[pos].append(int(input(f'Informe um número para a posição [{pos}, {valor}] número: ')))
+
+print('-=' * 15)
+
+for pos in range(0, len(matriz)):
+    for valor in matriz[pos]:
+        print(f'[ {valor} ]', end='')
+    print('')

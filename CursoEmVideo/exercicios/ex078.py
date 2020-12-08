@@ -23,6 +23,7 @@ if numeros.count(menor) > 1:
     for pos, num in enumerate(numeros):
         if num == menor:
             print(f' {pos}... ', end='')
+    print('')
 else:
     print(f'O menor número é {menor} e está na posição: {numeros.index(menor)}')
 
