@@ -7,7 +7,7 @@ from random import randint
 from time import sleep
 
 print('-' * 30)
-print('{:^30}'.format('Palpites MEGA SENA'))
+print(f'{"Palpites MEGA SENA":^30}')
 print('-' * 30)
 
 lista = []

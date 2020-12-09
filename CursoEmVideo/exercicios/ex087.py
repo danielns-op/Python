@@ -17,7 +17,7 @@ print('-=' * 15)
 
 for pos in range(0, len(matriz)):
     for valor in matriz[pos]:
-        print(f'[{valor: ^5}]', end='')
+        print(f'[{valor:^5}]', end='')
     print('')
 
 print(f'\nA Soma de todos os valores pares digitados é: {soma_par}')

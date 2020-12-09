@@ -18,7 +18,9 @@ while True:
     contador += 1
     if contador == 1:
         pesado = dados[1]
+        mais_pesado.append(dados[:])
         leve = dados[1]
+        mais_leve.append(dados[:])
     else:
         if dados[1] > pesado:
             mais_pesado.clear()
@@ -39,13 +41,8 @@ while True:
         continuar = str(input('Deseja continuar? [S/N]: ')).strip().upper()
     if continuar == 'N':
         break
-    print(lista)
-    print(dados)
-    print(mais_pesado)
-    print(mais_leve)
 
 print('=-' * 15)
-print(mais_pesado)
 print(f'Ao todo você cadastrou {len(lista):.0f} pessoas.')
 
 print(f'O maior peso foi de {pesado}Kg. Peso de ', end='')

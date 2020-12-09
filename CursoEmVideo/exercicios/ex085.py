@@ -14,5 +14,7 @@ for v in range(1, 8):
 lista[0].sort()
 lista[1].sort()
 
+print('-' * 40)
+
 print(f'Números pares: {lista[0]}')
 print(f'Números ímpares: {lista[1]}')

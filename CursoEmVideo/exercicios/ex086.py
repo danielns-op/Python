@@ -11,5 +11,5 @@ print('-=' * 15)
 
 for pos in range(0, len(matriz)):
     for valor in matriz[pos]:
-        print(f'[ {valor} ]', end='')
+        print(f'[ {valor:^5} ]', end='')
     print('')
