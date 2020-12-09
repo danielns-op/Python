@@ -4,14 +4,28 @@
 # 1 e 60 para cada jogo, cadastrando tudo em uma
 # lista composta.
 from random import randint
+from time import sleep
+
+print('-' * 30)
+print('{:^30}'.format('Palpites MEGA SENA'))
+print('-' * 30)
 
 lista = []
+numeros = []
 quantidade = int(input('Quantos Jogos serão criados: '))
 
 for quant in range(0, quantidade):
-    lista.insert(quant, list())
     for num in range(0, 6):
         numero = randint(1, 60)
-        lista[quant].append(numero)
+        while numero in numeros:
+            numero = randint(1, 60)
+        numeros.append(numero)
+    lista.append(numeros[:])
+    numeros.clear()
 
-print(lista)
+print(f'{f" Sorteando {quantidade} JOGOS ":-^30}')
+for valores in lista:
+    valores.sort()
+    print(f'Jogo {lista.index(valores) + 1}: {valores}')
+    sleep(1)
+print(f'{" BOA SORTE! ":-^30}')
