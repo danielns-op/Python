@@ -30,17 +30,13 @@ while True:
     else:
         cont += 1
 
-print(db_jogadores)
 while True:
     print('-' * 40)
-    print(f'{"COD":<5}{"Nome":<10}{"Gols":<15}{"Total":<5}')
+    print(f'{"COD":<5}{"Nome":<15}{"Gols":<25}{"Total":<5}')
     cod = 0
-    while cod < len(db_jogadores):
+    for valor in db_jogadores.values():
         cod += 1
-        for chave, valor in db_jogadores.items():
-            for k, v in valor.items():
-                print(v)
-            #print(f'{cod:>5} {valores["Nome"]}{valores["Gols"]}{valores["Total de Gols"]}')
+        print(f'{cod:<5}{valor["Nome"]:<15}{valor["Gols"]}{" ":>10}{valor["Total de Gols"]:<5}')
     print('-' * 40)
     visualizar = int(input('Visualizar dados de qual jogador [COD]: '))
     while visualizar > len(db_jogadores):
