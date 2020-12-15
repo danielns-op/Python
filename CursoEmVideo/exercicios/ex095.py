@@ -42,7 +42,11 @@ while True:
     while visualizar > len(db_jogadores):
         print(f'Favor informar um número entre 1 e {len(db_jogadores)}.')
         visualizar = int(input('Visualizar dados de qual jogador [COD]: '))
-
+    for dados in db_jogadores[f'Jogador_{visualizar}']:
+        print(dados)
+        #print(f'("-- Levantamento do Jogador {dados["Nome"]} --":^40)')
+        #for partida in range(1, len(dados['Gols'])):
+            #print(f'\tNo jogo {partida + 1} fez {dados["Gols"][partida]}. ')
 print('-' * 40)
 #sleep(1)
 
