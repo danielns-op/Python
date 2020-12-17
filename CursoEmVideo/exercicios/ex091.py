@@ -8,7 +8,7 @@ from time import sleep
 
 dados = {}
 
-for n in range(1, 6):
+for n in range(1, 5):
     dados[f'Jogador{n}'] = randint(1, 6)
 
 print('Valores sorteados:')
@@ -31,3 +31,8 @@ while len(dados) > 0:
     sleep(0.5)
     del dados[jogador]
     posicao += 1
+
+# Na resolução do Guanabara ele utiliza o modulo itemgetter
+# from operator import itemgetter
+# ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+

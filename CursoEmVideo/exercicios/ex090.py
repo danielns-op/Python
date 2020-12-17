@@ -13,5 +13,7 @@ for k, v in dados.items():
 
 if dados['Média'] >= 7:
     print('Situação é igual a Aprovado.')
+elif dados['Média'] >= 5:
+    print('Situação é igual a Recuperação.')
 else:
     print('Situação é igual a Reprovado.')

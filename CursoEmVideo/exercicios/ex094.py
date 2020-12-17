@@ -15,8 +15,13 @@ idade_acima_media = []
 
 while True:
     dados = {'Nome': str(input('Nome: ')).strip(),
-             'Sexo': str(input('Sexo [M/F]: ')).strip().upper(),
+             'Sexo': str(),
              'Idade': int(input('Idade: '))}
+    sexo = str(input('Sexo [M/F]: ')).strip().upper()
+    while sexo not in 'MF':
+        print('Erro! Digite apenas M - Masculino ou F - Feminino.')
+        sexo = str(input('Sexo [M/F]: ')).strip().upper()
+    dados['Sexo'] = sexo
     lista_dados.append(dados)
     continuar = str(input('Deseja continuar? [S/N]: ')).strip().upper()
     while continuar not in 'SN':

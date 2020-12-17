@@ -31,11 +31,11 @@ while True:
         cont += 1
 
 print('-' * 40)
-print(f'{"COD":<5}{"Nome":<15}{"Gols":<25}{"Total":<5}')
+print(f'{"COD":<5}{"Nome":<15}{"Gols":<20}{"Total":<5}')
 cod = 0
 for valor in db_jogadores.values():
     cod += 1
-    print(f'{cod:<5}{valor["Nome"]:<15}{valor["Gols"]}{"":<25}{valor["Total de Gols"]}')
+    print(f'{cod:<5}{valor["Nome"]:<15}{str(valor["Gols"]):<20}{valor["Total de Gols"]:^5}')
 print('-' * 40)
 
 while True:
