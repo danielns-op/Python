@@ -14,9 +14,12 @@ from time import sleep
 
 def contador(i, f, p):
     print('-' * 45)
-    print(f'Contagem de {i} até {f} de {p} em {p}:')
+    print(f'Contagem de {i} até {f} ', end='')
     if p == 0:
         p = 1
+        print(f'de {p} em {p}:')
+    else:
+        print(f'de {p} em {p}:')
     if f < i:
         if p > 0:
             p *= -1
