@@ -14,7 +14,7 @@ from time import sleep
 
 def contador(i, f, p):
     print('-' * 45)
-    print(f'Contagem de {i} até {f} ', end='')
+    print(f'Contagem de {i} até {f} ', end='', flush=True)
     if p == 0:
         p = 1
         print(f'de {p} em {p}:')
@@ -27,7 +27,7 @@ def contador(i, f, p):
     else:
         f += 1
     for i in range(i, f, p):
-        print(i, end=' ')
+        print(i, end=' ', flush=True)
         sleep(0.5)
     print('FIM!')
     print('-' * 45)

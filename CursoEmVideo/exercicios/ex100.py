@@ -9,18 +9,18 @@ numeros = []
 
 
 def sorteia():
-    print('Sorteando 5 valores para a lista:', end=' ')
+    print('Sorteando 5 valores para a lista:', end=' ', flush=True)
     for n in range(0, 5):
         sleep(0.5)
         valor = randint(1, 10)
         numeros.append(valor)
-        print(valor, end=' ')
+        print(valor, end=' ', flush=True)
     print('PRONTO!')
 
 
 def somaPar():
     soma = 0
-    print(f'Somando os valores pares de {numeros},', end=' ')
+    print(f'Somando os valores pares de {numeros},', end=' ', flush=True)
     for valor in numeros:
         if valor % 2 == 0:
             soma += valor

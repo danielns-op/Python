@@ -7,15 +7,15 @@ from time import sleep
 def maior(*valor):
     n_maior = 0
     print('-' * 45)
-    print(f'Analisando os valores passados...')
+    print(f'Analisando os valores passados...', flush=True)
     sleep(0.5)
     for v in valor:
-        print(v, end=' ')
+        print(v, end=' ', flush=True)
         sleep(0.5)
         if v > n_maior:
             n_maior = v
     print(f'Foram informados {len(valor)} valores ao todo.')
-    print(f'O maior valor informado foi o {n_maior}.')
+    print(f'O maior valor informado foi o {n_maior}.', flush=True)
     sleep(0.5)
 
 
