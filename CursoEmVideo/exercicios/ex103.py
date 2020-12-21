@@ -10,15 +10,13 @@
 def ficha(nome, gols=0):
     if not nome:
         nome = '<desconhecido>' 
+    if not gols.isnumeric():
+        gols = 0
     print(f'O jogador {nome} fez {gols} gol(s) no campeonato.')
 
 
 print('-' * 40)
 jogador = str(input('Nome do Jogador: ')).strip()
-try:
-    quant_gol = int(input('Número de Gols: '))
-except:
-    quant_gol = 0
-
+quant_gol = str(input('Número de Gols: '))
 ficha(jogador, quant_gol)
 

@@ -58,4 +58,5 @@ def notas(*n, sit=False):
 
 
 info = notas(3.5, 2, 6.5, 2, 7, 4, sit=True)
-help(notas)
+print(info)
+

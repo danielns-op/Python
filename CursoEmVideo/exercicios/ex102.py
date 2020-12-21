@@ -33,6 +33,6 @@ def fatorial(n, show=False):
     return fator
 
 
-print(fatorial(5))
+print(fatorial(5, show=True))
 print('-' * 40)
 
