@@ -25,10 +25,6 @@ def apresentacao(texto, cor):
     print('')
 
 
-def mostrarAjuda(valor):
-    return help(valor)
-
-
 def pyhelp():
     while True:
         titulo = ' SISTEMA DE AJUDA PyHELP '
@@ -45,8 +41,9 @@ def pyhelp():
         else:
             apresentacao(mostrar, azul)
             sleep(1.5)
-            ajuda = mostrarAjuda(funcao)
-            print(ajuda)
+            print(f'{branco}', end='')
+            help(funcao)
+            print(f'{normal}', end='')
             sleep(3)
 
 
