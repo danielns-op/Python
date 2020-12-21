@@ -77,4 +77,3 @@ def resumo(v, a, d):
     print(f'{f"{a}% de aumento:":<20}{aumentar(v, a, True):<10}')
     print(f'{f"{d}% de redução:":<20}{diminuir(v, d, True):<10}')
     print('-' * 30)
-
