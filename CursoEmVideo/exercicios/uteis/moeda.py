@@ -3,6 +3,13 @@
 
 
 def aumentar(v, p, f=False):
+    """
+    --> aumentar(v, p, f=False)
+    :param v:
+    :param p:
+    :param f:
+    :return:
+    """
     aumento = (v * p) / 100
     if f:
         return moeda(v + aumento)
@@ -11,6 +18,13 @@ def aumentar(v, p, f=False):
 
 
 def diminuir(v, p, f=False):
+    """
+    --> diminuir(v, p, f=False)
+    :param v:
+    :param p:
+    :param f:
+    :return:
+    """
     diminui = (v * p) / 100
     if f:
         return moeda(v - diminui)
@@ -19,6 +33,12 @@ def diminuir(v, p, f=False):
 
 
 def dobro(v, f=False):
+    """
+    --> dobro(v, f=False)
+    :param v:
+    :param f:
+    :return:
+    """
     if f:
         return moeda(v * 2)
     else:
@@ -26,6 +46,12 @@ def dobro(v, f=False):
 
 
 def metade(v, f=False):
+    """
+    --> metade(v, f=False)
+    :param v:
+    :param f:
+    :return:
+    """
     if f:
         return moeda(v / 2)
     else:
@@ -33,5 +59,10 @@ def metade(v, f=False):
 
 
 def moeda(v):
+    """
+    --> moeda(v)
+    :param v:
+    :return:
+    """
     return f'R$ {v:.2f}'.replace('.', ',')
 
