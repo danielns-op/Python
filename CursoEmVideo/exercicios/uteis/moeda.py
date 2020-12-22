@@ -5,10 +5,10 @@
 def aumentar(v, p, f=False):
     """
     --> aumentar(v, p, f=False)
-    :param v:
-    :param p:
-    :param f:
-:return:
+    :param v: Valor que será aumentado.
+    :param p: Valor da Porcentagem.
+    :param f: Se o valor será saida formatada, padrão é False.
+:return: Retorna o valor, se f=True retorna o Valor formatado.
     """
     aumento = (v * p) / 100
     if f:
@@ -20,10 +20,10 @@ def aumentar(v, p, f=False):
 def diminuir(v, p, f=False):
     """
     --> diminuir(v, p, f=False)
-    :param v:
-    :param p:
-    :param f:
-    :return:
+    :param v: Valor que será diminuido.
+    :param p: Valor da Porcentagem.
+    :param f: Se o valor será formatado, padrão é False.
+    :return: Retorna o valor, se f=True retorna o valor formatado.
     """
     diminui = (v * p) / 100
     if f:
@@ -35,9 +35,9 @@ def diminuir(v, p, f=False):
 def dobro(v, f=False):
     """
     --> dobro(v, f=False)
-    :param v:
-    :param f:
-    :return:
+    :param v: Valor que será dobrado.
+    :param f: Se o valor será formatado, padrão é False.
+    :return: Retorna o valor, se f=True retorna o valor formatado.
     """
     if f:
         return moeda(v * 2)
@@ -48,9 +48,9 @@ def dobro(v, f=False):
 def metade(v, f=False):
     """
     --> metade(v, f=False)
-    :param v:
-    :param f:
-    :return:
+    :param v: Valore que será dividido.
+    :param f: Se o valor será formatado, padrão é False.
+    :return: Retorna o valor, se f=True retorna o valor formatado.
     """
     if f:
         return moeda(v / 2)
@@ -61,13 +61,19 @@ def metade(v, f=False):
 def moeda(v):
     """
     --> moeda(v)
-    :param v:
-    :return:
+    :param v: Valor que será formatado.
+    :return: Retorna o valor formatado monetáriamente.
     """
     return f'R$ {v:.2f}'.replace('.', ',')
 
 
 def resumo(v, a, d):
+    """
+    ---> resumo(v, a, d)
+    :param v: Valor que será utilizado para organizar.
+    :param a: Taxa de aumento.
+    :param d: Taxa de redução.
+    """
     print('-' * 30)
     print(f'{"RESUMO DO VALOR":^30}')
     print('-' * 30)

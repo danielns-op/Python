@@ -5,13 +5,25 @@
 def leiaDinheiro(texto):
     vermelho = '\033[1;31m'
     normal = '\033[m'
+
     while True:
         valor = str(input(texto)).strip()
-        if not valor.isnumeric():
+        if '.' in valor:
+            nvalor = valor.replace('.', '')
+            if nvalor.isnumeric():
+                valor = float(valor)
+                break
+        elif ',' in valor:
+            nvalor = valor.replace(',', '')
+            if nvalor.isnumeric():
+                valor = valor.replace(',', '.')
+                valor = float(valor)
+                break
+        elif not valor.isnumeric():
             print(f'{vermelho}ERRO: \"{valor}\" é um preço inválido!{normal}')
         else:
-            if ',' in valor:
-                valor = valor.replace(',', '.')
+            valor = float(valor)
             break
+
     return valor
 
