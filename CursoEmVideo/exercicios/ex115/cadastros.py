@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+# Crie um pequeno sistema modularizado que permita cadastrar pessoas
+# pelo seu nome e idade em um arquivo de texto simples.
+# O sistema só vai ter 2 opções: cadastrar uma nova pessoa e listar
+# todas as pessoas.
 from time import sleep
 
 # cores
@@ -10,7 +15,7 @@ verde = '\033[1;32m'
 normal = '\033[m'
 
 # nome do arquivo/DB com as informações de cadastro.
-arquivo = 'DBcadastros.db'
+arquivo = './ex115/DBcadastros.db'
 
 def cadastro():
     print('-' * 40)
