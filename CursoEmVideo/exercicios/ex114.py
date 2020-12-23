@@ -3,6 +3,8 @@
 
 # Crie um código em Python que teste se o site Pudim está
 # acessível pelo computador usado.
+
+# ---- MINHAS SOLUÇÃO ---- #
 import socket
 
 
@@ -19,8 +21,23 @@ def verificaSite(site, porta=80):
 
 
 site = str(input('Qual site: '))
-
 acesso = verificaSite(site)
-
 print(acesso)
+# ------------------------ #
+
+# - Solução do Gustavo Guanabara - #
+import urllib
+import urllib.request
+
+try:
+    site = urllib.request.urlopen('http://www.pudim.com.br')
+except urllib.error.URLError:
+    print(f'\033[1;31mO site \"{site}\" não está acessível no momento.\033[m')
+else:
+    print(f'\033[1;33mConsegui acessar o site Pudim com sucesso!\033[m')
+
+# Para ler o conteúdo do site, ver o código HTML.
+# utilizar a opção read()
+# Ex.: print(site.read()))
+# -------------------------------- #
 
