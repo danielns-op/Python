@@ -1,4 +1,4 @@
 # Python
 
-Diretório destinado ao meus estudos da linguagem Python.
+Diretório destinado aos meus projetinhos na linguagem Python.
 
