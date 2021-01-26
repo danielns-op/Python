@@ -4,10 +4,10 @@ from random import choice
 
 vida = 6
 mostrar = []
+erro = ''
 
 
 def escolhe_nivel_palavra():
-    print('-=' * 30)
     print('''
           Escolha um nível:
           [ 1 ] - Fácil
@@ -33,8 +33,10 @@ def escolhe_nivel_palavra():
     return escolha
            
             
-def valida_vogal(supor, palavra_escolhida):
+def valida_vogal(supor, palavra_escolhida, vidas=vida, letra_supor=erro):
     lista_vogal = []
+    validar = False
+
     if supor == 'a':
         lista_vogal = palavras.vogal_a
     elif supor == 'e':
@@ -46,20 +48,28 @@ def valida_vogal(supor, palavra_escolhida):
     elif supor == 'u':
         lista_vogal = palavras.vogal_u
     
-    for index in range(len(palavra_escolhida)):
+    for posicao in range(len(palavra_escolhida)):
         for vogal in lista_vogal:
-            if vogal == palavra_escolhida[index]:
-                mostrar[index] = vogal
+            if vogal == palavra_escolhida[posicao]:
+                mostrar[posicao] = vogal
+                validar = True
+
+    if not validar:
+        letra_supor += supor
+        vidas -= 1
             
 
-def execucao(nome, vidas):
+def execucao(nome, vidas=vida, letra_supor=erro):
     palavra = nome
-    letra_supor = ''
 
     for _ in range(len(palavra)):
         mostrar.append('_')
 
     while True:
+        print(artes.estagio[vidas])
+        print(f'Palavra: {" ".join(mostrar)}')
+        print(f'Letras erradas: {"-".join(letra_supor)}')
+        print('-=' * 30)
         supor = str(input('Adivinhe uma letra: ')).strip().lower()
         if len(supor) != 1:
             print('Atenção! Informe apenas uma letra.')
@@ -68,22 +78,17 @@ def execucao(nome, vidas):
         else:
             if supor in 'aeiou':
                 valida_vogal(supor, palavra)
-            for index in range(len(palavra)):
-                if supor == palavra[index]:
-                    mostrar[index] = supor
-            if supor not in palavra:
-                letra_supor += supor
-                vidas -= 1
-            if vidas < 0:
-                print(f'Você perdeu, a palavra é {palavra}')
-                break
-            print(f'{" ".join(mostrar)}')
-            if "_" not in mostrar:
-                print('Parabéns!!! Você venceu!')
-                break
-        print(artes.estagio[vidas])
-        print(f'{"-".join(letra_supor)}')
+            else:
+                for index in range(len(palavra)):
+                    if supor == palavra[index]:
+                        mostrar[index] = supor
+                if supor not in palavra:
+                    letra_supor += supor
+                    vidas -= 1
+                if vidas < 0:
+                    print(f'Você perdeu, a palavra é {palavra}')
+                    break
+                if "_" not in mostrar:
+                    print('Parabéns!!! Você venceu!')
+                    break
 
-
-escolhe_palavra = escolhe_nivel_palavra()
-execucao(escolhe_palavra, vida)
