@@ -1,3 +1,10 @@
+# pycypher.py #################################################
+#
+# Menssage encoder
+#
+# Author: Daniel Noronha
+#  Email: danielnoronha.sh@gmail.com
+# GitHub: 
 import crypt
 from time import sleep
 
