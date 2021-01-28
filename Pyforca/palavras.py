@@ -1,4 +1,5 @@
-palavras_faceis = [ 'amor', 'fato', 'puta', 'mito', 'esmo', 'caos', 
+# Palavras de 3 á 4 letras.
+palavras_faceis = ['amor', 'fato', 'puta', 'mito', 'esmo', 'caos',
                    'brio', 'vide', 'não', 'auge', 'como', 'sede', 
                    'céu', 'pois', 'ermo', 'mote', 'apto', 'tolo', 
                    'suma', 'crer', 'vida', 'vão', 'saga', 'idem', 
@@ -14,8 +15,9 @@ palavras_faceis = [ 'amor', 'fato', 'puta', 'mito', 'esmo', 'caos',
                    'rege', 'orla', 'alta', 'rito', 'mero', 'doce', 
                    'pelo', 'alto', 'foco', 'deus', 'sair', 'arte', 
                    'tese', 'bojo', 'até', 'novo', 'fora', 'alma', 
-                   'nós', 'lume', 'fito', 'seio' ]
+                   'nós', 'lume', 'fito', 'seio']
 
+# Palavras com 7 letras.
 palavras_normal = ['empatia', 'embuste', 'prolixo', 'cínico', 
                    'idôneo', 'âmbito', 'sublime', 'néscio', 
                    'índole', 'sucinto', 'inócuo', 'convém', 
@@ -42,6 +44,7 @@ palavras_normal = ['empatia', 'embuste', 'prolixo', 'cínico',
                    'lúdico', 'intuito', 'profano', 'colapso', 
                    'sentido', 'orgulho', 'bizarro', 'cortês']
 
+# Palavras com 12 letras.
 palavras_dificeis = ['significado', 'perspectiva', 'dicionário', 
                      'intrínseco', 'presunçoso', 'dissimulado', 
                      'diligência', 'intempérie', 'presunção', 
@@ -86,3 +89,5 @@ vogal_i = ['i', 'í', 'ì']
 vogal_o = ['o', 'ó', 'ò', 'ô', 'õ']
 
 vogal_u = ['u', 'ú', 'ù']
+
+letra_c = ['c', 'ç']
