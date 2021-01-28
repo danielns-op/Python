@@ -5,6 +5,8 @@
 # Author: Daniel Noronha                                             #
 #  Email: danielnoronha.sh@gmail.com                                 #
 # GitHub: https://github.com/danielns-op/Python/tree/main/pycypher   #
+# ------------------------------------------------------------------ #
+# v1.1 - Stable                                                      #
 # ################################################################## #
 import crypt
 from time import sleep
@@ -32,8 +34,6 @@ def execution():
             print('Invalid option')
             sleep(2)
             continue
-
-        print('Tudo certo!')
 
 
 execution()
