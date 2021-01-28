@@ -7,7 +7,7 @@ Send messages safely, only the person with the keyword will be able to read your
 ## How to use  
 
 1. Copy the **pycypher** directory to your computer.
-2. run the file with python3.
+2. run the file with python3.   
    `python3 pycypher.py`
 3. Choose what you would like to do, encode or decode a message.   
    ```console
