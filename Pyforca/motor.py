@@ -33,21 +33,23 @@ def escolhe_nivel_palavra():
     return escolha
            
             
-def valida_vogal(supor):
-    lista_vogal = []
+def valida_letra(supor):
+    lista_letra = []
 
     if supor == 'a':
-        lista_vogal = palavras.vogal_a
+        lista_letra = palavras.vogal_a
     elif supor == 'e':
-        lista_vogal = palavras.vogal_e
+        lista_letra = palavras.vogal_e
     elif supor == 'i':
-        lista_vogal = palavras.vogal_i
+        lista_letra = palavras.vogal_i
     elif supor == 'o':
-        lista_vogal = palavras.vogal_o
+        lista_letra = palavras.vogal_o
     elif supor == 'u':
-        lista_vogal = palavras.vogal_u
+        lista_letra = palavras.vogal_u
+    elif supor == 'c':
+        lista_letra = palavras.letra_c
 
-    return lista_vogal
+    return lista_letra
 
 
 def execucao(nome, vidas=vida, letra_supor=erro):
@@ -57,9 +59,10 @@ def execucao(nome, vidas=vida, letra_supor=erro):
         mostrar.append('_')
 
     while True:
-        # váriavel para validar se existe não existe vogais com acentos.
+        # váriavel para validar se existe não existe vogais com
+        # acentos ou a letra 'ç'.
         existe = 0
-        
+
         print(artes.estagio[vidas])
         print(f'Palavra: {" ".join(mostrar)}')
         print(f'Letras erradas: {"-".join(letra_supor)}')
@@ -76,18 +79,19 @@ def execucao(nome, vidas=vida, letra_supor=erro):
         elif supor.isnumeric():
             print('[ERRO] - Informe apenas letra.')
         else:
-            # verifica se existe a vogal com acentos
-            if supor in 'aeiou':
-                grupo_vogal = valida_vogal(supor)
+            # verifica se existe a vogal com acentos ou o 'ç'
+            if supor in 'aeiouc':
+                grupo_letra = valida_letra(supor)
                 for posicao in range(len(palavra)):
-                    for vogal in grupo_vogal:
-                        # verifica se cada vogal do grupo está na palavra,
+                    for vogal in grupo_letra:
+                        # verifica se cada vogal do grupo ou 'ç' está na palavra,
                         # Ex: vogal 'e' grupo: ['e', 'é', 'è', 'ê']
                         if vogal == palavra[posicao]:
-                            # caso exista uma vogal acentuada, a mesma será mostrada.
+                            # caso exista uma vogal acentuada  ou letra 'ç',
+                            # a mesma será mostrada.
                             mostrar[posicao] = vogal
                             existe += 1
-                # caso nenhuma volgal do grupo exista é necessário reduzir a vida
+                # caso não exista é necessário reduzir a vida
                 # e mostrar a vogal errada.
                 if existe == 0:
                     letra_supor += supor
