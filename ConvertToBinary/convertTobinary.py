@@ -1,10 +1,10 @@
-# convertTobinary ################################################ #
-#
-# Author: Daniel Noronha
-#  Email: danielnoronha.sh@gmail.com
-# GitHub:
-#                                                         #
-# ####################################################### #
+# convertTobinary ####################################################### #
+#                                                                         #
+# Author: Daniel Noronha                                                  #
+#  Email: danielnoronha.sh@gmail.com                                      #
+# GitHub: https://github.com/danielns-op/Python/tree/main/ConvertToBinary #
+#                                                                         #
+# ####################################################################### #
 
 
 def convert_binary(value):
