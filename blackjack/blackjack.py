@@ -59,7 +59,7 @@ def play():
             print('-=' * 32)
             while True:
                 try:
-                    print(f'>Balance: {balance[0]}')
+                    print(f'>Balance: ${balance[0]}')
                     bet_player = int(input('->How much you want to bet: $'))
                     if bet_player < 1 or bet_player > balance[0]:
                         print(f'Attention, enter value between 1 and {balance[0]}.')
@@ -136,7 +136,7 @@ def play():
                 print(f'{"*** A tie ! ***":^64}')
                 balance_player += bet_player
             elif player_score <= 21 and bot_score > 21 or 21 >= player_score > bot_score:
-                print(f'{"|---- You Win !!! ----|":64}')
+                print(f'{"|---- You Win !!! ----|":^64}')
                 balance_player = balance_player + (bet_player * 2)
                 balance[0] = balance_player
                 print(f'{f"--> Balance: ${balance_player}":^60}')
@@ -144,7 +144,7 @@ def play():
                 print(f'{"~~~~ You Lose. ~~~~":^64}')
                 print(f'{f"--> Balance: ${balance_player}":^60}')
                 if balance_player <= 0:
-                    print('No balance, game over for you.')
+                    print('No balance, game over for you.\n\n')
                     sleep(2)
                     exit(0)
         else:
@@ -152,11 +152,14 @@ def play():
             playing = False
             sleep(1.5)
         again = str(input('Play again? [Y / n]: ')).strip().lower()
+        while again not in 'yn':
+            again = str(input('Play again? [Y / n]: ')).strip().lower()
         if again == 'y':
             continue
         else:
             break
 
 
-play()
-print('See you next time!')
+if __name__ == '__main__':
+    play()
+    print('See you next time!\n\n')
