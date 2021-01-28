@@ -17,9 +17,9 @@ def encrypt(msg, key):
 
     for character in msg:
         position = set_char.index(character)
-        if position + cod > len(set_char):
+        if position + cod > (len(set_char) - 1):
             position += cod
-            encrypted_text += set_char[position - len(set_char)]
+            encrypted_text += set_char[position - (len(set_char) - 1)]
         else:
             encrypted_text += set_char[position + cod]
 
@@ -35,7 +35,10 @@ def decrypt(msg, key):
         position = set_char.index(character)
         if position - cod < 0:
             position -= cod
-            decoded_text += set_char[len(set_char) - position]
+            # The negative value must be added to the positive value
+            # so that it reduces the position in the list.
+            # e.g. -5 + 30 = 25
+            decoded_text += set_char[position + (len(set_char) - 1)]
         else:
             decoded_text += set_char[position - cod]
     print(f'Your decoded text is:\n {decoded_text}')
