@@ -44,7 +44,7 @@ To decode, follow the steps below:
         [ 1 ] - Encode
         [ 2 ] - Decode
         [ q ] - Exit
-    Your option: 1
+    Your option: 2
    ```   
 3. Copy the coded message.   
    ```console
