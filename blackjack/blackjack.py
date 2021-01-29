@@ -135,6 +135,7 @@ def play():
             if player_score == bot_score:
                 print(f'{"*** A tie ! ***":^64}')
                 balance_player += bet_player
+                balance[0] = balance_player
             elif player_score <= 21 and bot_score > 21 or 21 >= player_score > bot_score:
                 print(f'{"|---- You Win !!! ----|":^64}')
                 balance_player = balance_player + (bet_player * 2)
