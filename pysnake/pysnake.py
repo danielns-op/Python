@@ -33,11 +33,13 @@ while play_game:
 
     snake.move_forward()
 
+    screen.onkeypress(fun=snake.move_up, key='w')
+    screen.onkeypress(fun=snake.move_up, key='Up')
+    screen.onkeypress(fun=snake.move_left, key='a')
+    screen.onkeypress(fun=snake.move_left, key='Left')
+    screen.onkeypress(fun=snake.move_right, key='d')
+    screen.onkeypress(fun=snake.move_right, key='Right')
+    screen.onkeypress(fun=snake.move_down, key='s')
+    screen.onkeypress(fun=snake.move_down, key='Down')
     screen.listen()
-    screen.onkey(fun=snake.move_up, key='w')
-    screen.onkey(fun=snake.move_left, key='a')
-    screen.onkey(fun=snake.move_right, key='d')
-    screen.onkey(fun=snake.move_down, key='s')
-
-# Loop up.
-screen.exitonclick()
+    # Loop up.
