@@ -1,16 +1,14 @@
-class Snake:
+class Movement:
 
     def __init__(self, snake):
         self.snake = snake
 
     def move_forward(self):
-        pos_x = self.snake[0].xcor()
-        pos_y = self.snake[0].ycor()
-        self.snake[0].forward(9)
-        for seg in range(1, len(self.snake)):
+        for seg in range(len(self.snake) - 1, 0, -1):
+            pos_x = self.snake[seg - 1].xcor()
+            pos_y = self.snake[seg - 1].ycor()
             self.snake[seg].goto(pos_x, pos_y)
-            pos_x = self.snake[seg].xcor()
-            pos_y = self.snake[seg].ycor()
+        self.snake[0].forward(10)
 
     def move_up(self):
         pos_x = self.snake[0].xcor()
