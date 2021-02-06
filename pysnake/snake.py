@@ -28,13 +28,21 @@ class Snake:
         self.snake_head.forward(MOVE_DISTANCE)
 
     def move_up(self):
-        self.snake_head.setheading(90)
+        # If the direction of movement is downwards, it cannot go upwards.
+        if self.snake_head.heading() != 270:
+            self.snake_head.setheading(90)
 
     def move_left(self):
-        self.snake_head.setheading(180)
+        # If the direction of movement is to the right, he cannot go to the left.
+        if self.snake_head.heading() != 0:
+            self.snake_head.setheading(180)
 
     def move_right(self):
-        self.snake_head.setheading(0)
+        # If the direction of movement is to the left, he cannot go to the right.
+        if self.snake_head.heading() != 180:
+            self.snake_head.setheading(0)
 
     def move_down(self):
-        self.snake_head.setheading(270)
+        # If the direction of movement is upwards, it cannot go downwards.
+        if self.snake_head.heading() != 90:
+            self.snake_head.setheading(270)
