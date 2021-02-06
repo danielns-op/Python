@@ -1,11 +1,11 @@
-# pysnake.py ################################################## #
-#                                                               #
-# Snake Game                                                    #
-#                                                               #
-# Author: Daniel Noronha                                        #
-#  Email: danielnoronha.sh@gmail.com                            #
-# GitHub:
-# ############################################################# #
+# pysnake.py #################################################### #
+#                                                                 #
+# Snake Game                                                      #
+#                                                                 #
+# Author: Daniel Noronha                                          #
+#  Email: danielnoronha.sh@gmail.com                              #
+# GitHub: https://github.com/danielns-op/Python/tree/main/pysnake #
+# ############################################################### #
 from turtle import Screen
 from snake import Snake
 from time import sleep
