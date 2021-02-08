@@ -11,12 +11,12 @@ class Food(Turtle):
         self.shapesize(stretch_len=0.5, stretch_wid=0.5)
         self.color('red')
         self.speed('fastest')
-        x_random = randint(-290, 290)
-        y_random = randint(-290, 290)
+        x_random = randint(-270, 270)
+        y_random = randint(-270, 270)
         self.goto(x_random, y_random)
         self.refresh()
 
     def refresh(self):
-        x_random = randint(-290, 290)
-        y_random = randint(-290, 290)
+        x_random = randint(-270, 270)
+        y_random = randint(-270, 270)
         self.goto(x_random, y_random)
