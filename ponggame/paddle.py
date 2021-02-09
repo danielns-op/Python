@@ -1,48 +1,39 @@
 from turtle import Turtle
-from random import randint
 
 MAX_Y = 220
 MIN_Y = -220
 
 
-class Paddle:
+class Paddle(Turtle):
 
-    def __init__(self):
-        self.pad = Turtle(shape='square')
-        self.pad.penup()
-        self.pad.color('black')
-        self.pad.shapesize(stretch_wid=3, stretch_len=0.5)
-
-
-class PlayerPad(Paddle):
-
-    def __init__(self):
+    def __init__(self, position):
         super().__init__()
-        self.pad.goto((-330, 0))
-        self.pos_x = self.pad.xcor()
+        self.shape('square')
+        self.penup()
+        self.color('black')
+        self.shapesize(stretch_wid=3, stretch_len=0.5)
+        self.goto(position)
 
-    def move_up(self):
-        pos_y = self.pad.ycor()
+    def move_up_fp(self):
+        pos_y = self.ycor()
         if pos_y != MAX_Y:
             pos_y += 10
-            self.pad.goto((self.pos_x, pos_y))
+            self.goto((-330, pos_y))
 
-    def move_down(self):
-        pos_y = self.pad.ycor()
+    def move_down_fp(self):
+        pos_y = self.ycor()
         if pos_y != MIN_Y:
             pos_y -= 10
-            self.pad.goto((self.pos_x, pos_y))
+            self.goto((-330, pos_y))
 
+    def move_up_sp(self):
+        pos_y = self.ycor()
+        if pos_y != MAX_Y:
+            pos_y += 10
+            self.goto((330, pos_y))
 
-class BotPad(Paddle):
-
-    def __init__(self):
-        super().__init__()
-        self.pad.goto((330, randint(-200, 200)))
-        self.pos_x = self.pad.xcor()
-
-    def move_bot(self):
-        pos_y = self.pad.ycor()
+    def move_down_sp(self):
+        pos_y = self.ycor()
         if pos_y != MIN_Y:
-            pos_y += 1
-        self.pad.goto((self.pos_x, pos_y))
+            pos_y -= 10
+            self.goto((330, pos_y))
