@@ -32,6 +32,7 @@ class Score(Turtle):
         self.hideturtle()
 
     def update_score(self):
+        self.clear()
         self.write(arg=f'{self.score}', align=ALIGNMENT, font=FONT)
 
     def score_player(self):
