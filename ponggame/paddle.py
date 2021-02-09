@@ -43,4 +43,6 @@ class BotPad(Paddle):
 
     def move_bot(self):
         pos_y = self.pad.ycor()
+        if pos_y != MIN_Y:
+            pos_y += 1
         self.pad.goto((self.pos_x, pos_y))
