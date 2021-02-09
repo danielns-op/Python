@@ -17,23 +17,23 @@ class Paddle(Turtle):
     def move_up_fp(self):
         pos_y = self.ycor()
         if pos_y != MAX_Y:
-            pos_y += 10
+            pos_y += 15
             self.goto((-330, pos_y))
 
     def move_down_fp(self):
         pos_y = self.ycor()
         if pos_y != MIN_Y:
-            pos_y -= 10
+            pos_y -= 15
             self.goto((-330, pos_y))
 
     def move_up_sp(self):
         pos_y = self.ycor()
         if pos_y < MAX_Y:
-            pos_y += 10
+            pos_y += 15
             self.goto((330, pos_y))
 
     def move_down_sp(self):
         pos_y = self.ycor()
         if pos_y > MIN_Y:
-            pos_y -= 10
+            pos_y -= 15
             self.goto((330, pos_y))
