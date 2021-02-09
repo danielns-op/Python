@@ -1,4 +1,4 @@
-# Snake Hame
+# Snake Game
 
 ---
 
