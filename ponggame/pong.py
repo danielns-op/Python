@@ -61,10 +61,15 @@ while player:
     # Detect realized point.
     if pong_ball.xcor() < -340:
         bot_score.score += 1
+        if bot_score.score == 5:
+            player = False
         bot_score.score_bot()
         pong_ball.refresh_ball()
     elif pong_ball.xcor() > 340:
         player_score.score += 1
+        if player_score.score == 5:
+            winner = True
+            player = False
         player_score.score_player()
         pong_ball.refresh_ball()
 
