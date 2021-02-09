@@ -14,6 +14,7 @@ class Ball(Turtle):
 
     def refresh_ball(self):
         self.goto(0, 0)
+        self.reverse_direct_x()
 
     def move_ball(self):
         pox_x = self.xcor() + self.move_x
