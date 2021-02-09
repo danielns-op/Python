@@ -33,9 +33,9 @@ pong_ball = Ball()
 
 # Score
 player_score = Score()
-player_score.score_player()
 bot_score = Score()
 bot_score.score_bot()
+player_score.score_player()
 
 screen.listen()
 screen.onkeypress(fun=first_player.move_up_fp, key='w')
@@ -57,6 +57,16 @@ while player:
     if pong_ball.distance(second_player) < 30 and pong_ball.xcor() > 320 or \
             pong_ball.distance(first_player) < 30 and pong_ball.xcor() < -320:
         pong_ball.reverse_direct_x()
+
+    # Detect realized point.
+    if pong_ball.xcor() < -340:
+        bot_score.score += 1
+        bot_score.score_bot()
+        pong_ball.refresh_ball()
+    elif pong_ball.xcor() > 340:
+        player_score.score += 1
+        player_score.score_player()
+        pong_ball.refresh_ball()
 
 if winner:
     player_score.winner_game()
