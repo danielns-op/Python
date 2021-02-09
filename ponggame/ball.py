@@ -6,46 +6,19 @@ class Ball(Turtle):
     def __init__(self):
         super().__init__()
         self.shape('circle')
-        self.penup()
         self.color('white')
         self.fillcolor('DarkGreen')
+        self.penup()
+        self.move_x = 1
+        self.move_y = 1
 
     def move_ball(self):
-        self.forward(1)
+        pox_x = self.xcor() + self.move_x
+        pos_y = self.ycor() + self.move_y
+        self.goto(pox_x, pos_y)
 
-    def sense_n(self):
-        self.setheading(90)
+    def reverse_direct_y(self):
+        self.move_y *= -1
 
-    def sense_nne(self):
-        self.setheading(60)
-
-    def sense_ne(self):
-        self.setheading(30)
-
-    def sense_e(self):
-        self.setheading(0)
-
-    def sense_se(self):
-        self.setheading(330)
-
-    def sense_sse(self):
-        self.setheading(300)
-
-    def sense_s(self):
-        self.setheading(270)
-
-    def sense_ssw(self):
-        self.setheading(240)
-
-    def sense_sw(self):
-        self.setheading(210)
-
-    def sense_w(self):
-        self.setheading(180)
-
-    def sense_nw(self):
-        self.setheading(150)
-
-    def sense_nnw(self):
-        self.setheading(120)
-
+    def reverse_direct_x(self):
+        self.move_x *= -1
