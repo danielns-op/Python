@@ -8,8 +8,9 @@
 # ################################################################ #
 from turtle import Screen
 from screen_map import LineMiddle, Score
-from paddle import PlayerPad, BotPad
 from ball import Ball
+from paddle import Paddle
+from random import randint
 from time import sleep
 
 # Screen configuration
@@ -24,8 +25,8 @@ line = LineMiddle()
 line.draw_line()
 
 # Paddles
-player_pad = PlayerPad()
-bot_pad = BotPad()
+first_player = Paddle((-330, 0))
+second_player = Paddle((330, randint(-200, 200)))
 
 # Ball
 pong_ball = Ball()
@@ -37,21 +38,25 @@ bot_score = Score()
 bot_score.score_bot()
 
 screen.listen()
-screen.onkeypress(fun=player_pad.move_up, key='w')
-screen.onkeypress(fun=player_pad.move_down, key='s')
+screen.onkeypress(fun=first_player.move_up_fp, key='w')
+screen.onkeypress(fun=first_player.move_down_fp, key='s')
+screen.onkeypress(fun=second_player.move_up_sp, key='Up')
+screen.onkeypress(fun=second_player.move_down_sp, key='Down')
 
 player = True
 winner = False
 while player:
     screen.update()
     pong_ball.move_ball()
-    bot_pad.move_bot()
+
     # Detect collision with wall.
-    if pong_ball.xcor() > 330:
-        winner = True
-        player = False
-    elif pong_ball.xcor() < -330:
-        player = False
+    if pong_ball.ycor() > 230 or pong_ball.ycor() < -230:
+        pong_ball.reverse_direct_y()
+
+    # Detect collision with paddle.
+    if pong_ball.distance(second_player) < 30 and pong_ball.xcor() > 320 or \
+            pong_ball.distance(first_player) < 30 and pong_ball.xcor() < -320:
+        pong_ball.reverse_direct_x()
 
 if winner:
     player_score.winner_game()
