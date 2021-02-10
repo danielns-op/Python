@@ -6,6 +6,7 @@ from time import sleep
 
 # Screen configuration
 screen = Screen()
+screen.title('pyCrossyRoad')
 bgpic('crossyRoadMap.gif')
 screen.setup(width=800, height=600)
 screen.tracer(0)
