@@ -1,4 +1,4 @@
-from turtle import bgpic, Screen
+from turtle import bgpic, Screen, Turtle
 from player import Player, Goal
 from car import Car
 from time import sleep
@@ -34,9 +34,8 @@ while in_game:
 
     car.move()
 
-    if goal.distance(player) < 10:
+    if goal.distance(player) < 22:
         player.winner()
         in_game = False
-
 
 screen.exitonclick()
