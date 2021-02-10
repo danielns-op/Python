@@ -2,7 +2,7 @@ from turtle import Turtle, Screen
 from random import randint
 
 ACTION_PLAYER = ['char_up.gif', 'char_down.gif', 'char_left.gif', 'char_right.gif', 'char_stop.gif', 'char_finish.gif']
-SPEED = 8
+SPEED = 5
 
 for action in ACTION_PLAYER:
     Screen().register_shape(action)
@@ -16,12 +16,12 @@ class Player(Turtle):
         super().__init__()
         self.penup()
         self.shape(ACTION_PLAYER[4])
-        self.goto((randint(-360, 360), -260))
+        self.shapesize(stretch_wid=2, stretch_len=2)
+        self.goto(360, -260)
+        self.return_position()
 
-    def winner(self):
-        self.goto(0, 50)
-        self.color('IndianRed4')
-        self.write(arg='You Won!!!', align='center', font=('Arial', 80, 'normal'))
+    def return_position(self):
+        self.goto(360, -260)
 
     def move_up(self):
         self.shape(ACTION_PLAYER[0])
@@ -32,7 +32,7 @@ class Player(Turtle):
         else:
             # Check if it is going over the bridge.
             if -310 < self.xcor() < -290 or -100 < self.xcor() < -70 or \
-                    110 < self.xcor() < 130 or 340 < self.xcor() < 360:
+                    110 < self.xcor() < 130 or 340 < self.xcor() < 360 and self.ycor() < 280:
                 self.forward(SPEED)
 
     def move_down(self):
