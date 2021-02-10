@@ -1,6 +1,5 @@
 from turtle import Turtle, Screen
 from random import choice, randint
-from time import sleep
 
 CARS = ['blue_car.gif', 'grey_car.gif', 'jeep_green.gif', 'red_car.gif', 'yellow_car.gif']
 POS_X = [400, 420, 440, 460, 480, 500]
