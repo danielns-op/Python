@@ -11,6 +11,15 @@ class Snake:
         self.create_snake()
         self.snake_head = self.snake[0]
 
+    # Added function so that it is possible to add a continuous play mode of the game.
+    # As it stands, it is not currently being used.
+    def reset(self):
+        for seg in self.snake:
+            seg.goto(1000, 1000)
+        self.snake.clear()
+        self.create_snake()
+        self.snake_head = self.snake[0]
+
     def create_snake(self):
         for position in STARTING_POSITION:
             self.add_segment(position)
