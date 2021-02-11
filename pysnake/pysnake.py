@@ -10,7 +10,7 @@ from turtle import Screen
 from snake import Snake
 from time import sleep
 from food import Food
-from score_board import Score
+from score_board import Score, GameOver
 
 # Screen configuration.
 screen = Screen()
@@ -55,12 +55,14 @@ while play_game:
     # Detect collision with wall.
     if snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or \
             snake.snake_head.ycor() > 280 or snake.snake_head.ycor() < -280:
+        scoreboard.reset()
         play_game = False
 
     # Detect collision with tail.
     for segment in snake.snake[1:]:
         if snake.snake_head.distance(segment) < 5:
+            scoreboard.reset()
             play_game = False
 
-scoreboard.game_over()
+game_over = GameOver()
 screen.exitonclick()
