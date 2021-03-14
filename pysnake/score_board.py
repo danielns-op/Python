@@ -74,7 +74,7 @@ class CornerLine(Turtle):
         elif position == 'left':
             self.shapesize(stretch_wid=self.length_line, stretch_len=self.width_line)
             self.goto(-269.5, 0)
-        elif position == 'rigth':
+        elif position == 'right':
             self.shapesize(stretch_wid=self.length_line, stretch_len=self.width_line)
             self.goto(269.5, 0)
         else:
