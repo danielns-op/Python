@@ -53,3 +53,29 @@ class GameOver(Turtle):
         self.goto(0, 0)
         self.write('GAME OVER', align=ALIGNMENT, font=('Courier', 50, 'normal'))
 
+
+class CornerLine(Turtle):
+
+    def __init__(self):
+        super().__init__()
+        self.color('black')
+        self.shape('square')
+        self.penup()
+        self.width_line = 0.5
+        self.length_line = 27.4
+
+    def draw_line(self, position: str()):
+        if position == 'up':
+            self.shapesize(stretch_wid=self.width_line, stretch_len=self.length_line)
+            self.goto(0, 269.5)
+        elif position == 'down':
+            self.shapesize(stretch_wid=self.width_line, stretch_len=self.length_line)
+            self.goto(0, -269.5)
+        elif position == 'left':
+            self.shapesize(stretch_wid=self.length_line, stretch_len=self.width_line)
+            self.goto(-269.5, 0)
+        elif position == 'rigth':
+            self.shapesize(stretch_wid=self.length_line, stretch_len=self.width_line)
+            self.goto(269.5, 0)
+        else:
+            print('Wrong position:\nCorrect values: up, down, left, right')
