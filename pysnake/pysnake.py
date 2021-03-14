@@ -10,7 +10,7 @@ from turtle import Screen
 from snake import Snake
 from time import sleep
 from food import Food
-from score_board import Score, GameOver
+from score_board import Score, GameOver, CornerLine
 
 # Screen configuration.
 screen = Screen()
@@ -27,6 +27,18 @@ snake = Snake()
 apple = Food()
 scoreboard = Score()
 
+corner_line_up = CornerLine()
+corner_line_up.draw_line('up')
+
+corner_line_down = CornerLine()
+corner_line_down.draw_line('down')
+
+corner_line_left = CornerLine()
+corner_line_left.draw_line('left')
+
+corner_line_right = CornerLine()
+corner_line_right.draw_line('right')
+
 screen.listen()
 screen.onkeypress(fun=snake.move_up, key='w')
 screen.onkeypress(fun=snake.move_up, key='Up')
@@ -36,6 +48,9 @@ screen.onkeypress(fun=snake.move_right, key='d')
 screen.onkeypress(fun=snake.move_right, key='Right')
 screen.onkeypress(fun=snake.move_down, key='s')
 screen.onkeypress(fun=snake.move_down, key='Down')
+
+# info
+print("Click on the game screen to move the snake with the 'w', 'a', 's', 'd' keys or the direction arrows.")
 
 # Execution
 play_game = True
@@ -53,8 +68,8 @@ while play_game:
         scoreboard.increase_score()
 
     # Detect collision with wall.
-    if snake.snake_head.xcor() > 280 or snake.snake_head.xcor() < -280 or \
-            snake.snake_head.ycor() > 280 or snake.snake_head.ycor() < -280:
+    if snake.snake_head.xcor() > 265 or snake.snake_head.xcor() < -265 or \
+            snake.snake_head.ycor() > 265 or snake.snake_head.ycor() < -265:
         scoreboard.reset()
         play_game = False
 
