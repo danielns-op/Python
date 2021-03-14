@@ -64,7 +64,7 @@ class CornerLine(Turtle):
         self.width_line = 0.5
         self.length_line = 27.4
 
-    def draw_line(self, position: str()):
+    def draw_line(self, position: str):
         if position == 'up':
             self.shapesize(stretch_wid=self.width_line, stretch_len=self.length_line)
             self.goto(0, 269.5)
